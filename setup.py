@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import setuptools
 
 with open('README.md', 'r') as fh:
@@ -5,13 +7,13 @@ with open('README.md', 'r') as fh:
 
 setuptools.setup(
     name='entropiaevents',
-    version='1.0.0',
+    version='1.1.0',
     author='Christian Lölkes',
     author_email='christian.loelkes@gmail.com',
     description='Fetchs events from entropia.de',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/entropia/py-entropia-termine.git',
+    url='https://github.com/entropia/py-entropiaevents.git',
     packages=setuptools.find_packages(),
     classifiers=[
         'Programming Language :: Python :: 2',
