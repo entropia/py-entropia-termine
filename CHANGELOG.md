@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] 2019-03-XX
+### Added
+- Event class
+- Date and time parsing in Event() base on the locale (default: de_DE)
+- Default duration for events without end date.
+
+### Changed
+- Module now returns a list of Event classes instead of dicts
+
+### Removed
+- Unused requests import
+
 ## [1.1.0] 2019-03-05
 ### Added
 - Module can now be used standalone
