@@ -4,6 +4,16 @@ import re
 
 from obelixtools import API
 
+class Event:
+    def __init__(self, date, time, location, description):
+        self.date = date
+        self.time = time
+        self.location = location
+        self.description = description
+
+    def __str__(self):
+        return u'{date} {time} - {location} - {description}'.format(**self.__dict__)
+
 class WikiEvents:
     API_URL = 'https://entropia.de/api.php?format=json&action=parse&page=Vorlage:Termine'
 
@@ -25,7 +35,7 @@ class WikiEvents:
         self._events = []
         for row in self._rows:
             date, time, place, desc = [self._strip_html(col).strip() for col in row.groups()]
-            self._events.append(dict(date=date, time = time, place=place, desc=desc))
+            self._events.append(Event(date, time, place, desc))
 
     def to_json_file(self, filename):
         with file(filename, 'wb') as f:
